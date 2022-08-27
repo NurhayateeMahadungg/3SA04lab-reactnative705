@@ -9,6 +9,16 @@ const availableZipItems = [
     { place: 'Chiangmai', code: '50000' },
     { place: 'Khonkaen', code: '40000' },
     { place: 'Chonburi', code: '20000' },
+    { place: 'Yala', code: '95000' },
+    { place: 'Narathiwat', code: '96000' },
+    { place: 'Krabi', code: '81000' },
+    { place: 'Songkhla', code: '90000' },
+    { place: 'Phrae', code: '54000' },
+    { place: 'Nan', code: '55000' },
+    { place: 'Lamphun', code: '51000' },
+    { place: 'Mae Hong Son', code: '58000' },
+    { place: 'Tak', code: '63000' },
+    { place: 'Phayao', code: '56000' },
 ]
 
 const ZipItem = ({place, code, navigation}) => (
@@ -16,7 +26,7 @@ const ZipItem = ({place, code, navigation}) => (
         navigation.navigate('Weather', {zipCode: code})
     }}>
         <View style={styles.zipItem}>
-            <Text style={styles.subtitle}>{place}</Text>
+            <Text style={styles.title}>{place}</Text>
             <Text style={styles.subtitle}>{code}</Text>
         </View>
     </TouchableHighlight>
@@ -37,7 +47,8 @@ const styles = StyleSheet.create({
     zipItem: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        backgroundColor: "#006699"
     },
     zipPlace: {
         flex: 1,
@@ -45,8 +56,12 @@ const styles = StyleSheet.create({
     zipCode: {
         flex: 1,
     },
-    subtitle: {
+    title: {
         fontSize: 24,
-        color: '#000'
+        color: '#fffaf0'
+    },
+    subtitle: {
+        fontSize: 20,
+        color: '#fffaf0'
     }
 })
