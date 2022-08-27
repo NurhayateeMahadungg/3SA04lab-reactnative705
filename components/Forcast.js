@@ -1,9 +1,12 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function Forecast(props) {
     return (
         <View style={styles.backdrop}>
+            <Text style={styles.subtitle}> </Text>
+            <MaterialCommunityIcons size={60} name="heart" color={'#ff9900'} />
             <Text style={styles.subtitle}> </Text>
             <Text style={styles.title}>{props.main}</Text>
             <Text style={styles.subtitle}>{props.description}</Text>
@@ -11,7 +14,9 @@ export default function Forecast(props) {
             <Text style={styles.title}>{props.temp}  °C</Text>
             <Text style={styles.subtitle}>Pressure: {props.pressure}</Text>
             <Text style={styles.subtitle}>Humidity: {props.humidity}</Text>
-        </View>
+            <Text style={styles.subtitle}> </Text>
+                  
+        </View>    
     );
 }
 
