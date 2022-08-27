@@ -1,7 +1,8 @@
 import React from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import { TouchableHighlight } from "react-native-gesture-handler";
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const availableZipItems = [
     { place: 'Hatyai', code: '90110' },
@@ -26,11 +27,13 @@ const ZipItem = ({place, code, navigation}) => (
         navigation.navigate('Weather', {zipCode: code})
     }}>
         <View style={styles.zipItem}>
+            <MaterialCommunityIcons size={48} name="weather-sunny" color={'#fff'} />
             <Text style={styles.title}>{place}</Text>
             <Text style={styles.subtitle}>{code}</Text>
         </View>
     </TouchableHighlight>
 )
+
 
 export default function ZipCodeScreen(){
     const navigation = useNavigation()
